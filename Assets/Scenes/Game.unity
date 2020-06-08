@@ -615,6 +615,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5114214067339584456, guid: 0206e4be490d5234683cf06cfb36cfc3,
+        type: 3}
+      propertyPath: spEed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114214067339584456, guid: 0206e4be490d5234683cf06cfb36cfc3,
+        type: 3}
+      propertyPath: time
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5114214067339584456, guid: 0206e4be490d5234683cf06cfb36cfc3,
+        type: 3}
+      propertyPath: _speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8726506590232013709, guid: 0206e4be490d5234683cf06cfb36cfc3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -669,21 +684,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5114214067339584456, guid: 0206e4be490d5234683cf06cfb36cfc3,
-        type: 3}
-      propertyPath: spEed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5114214067339584456, guid: 0206e4be490d5234683cf06cfb36cfc3,
-        type: 3}
-      propertyPath: time
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5114214067339584456, guid: 0206e4be490d5234683cf06cfb36cfc3,
-        type: 3}
-      propertyPath: _speed
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0206e4be490d5234683cf06cfb36cfc3, type: 3}
@@ -753,6 +753,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143453978679774199, guid: c26ffd0ee0426fe458ccc6c53a183cdd,
+        type: 3}
+      propertyPath: _type
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c26ffd0ee0426fe458ccc6c53a183cdd, type: 3}

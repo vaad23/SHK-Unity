@@ -17,19 +17,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        Vector3 direction = new Vector3(0, 0, 0);
-
-        if (Input.GetKey(KeyCode.W))
-            direction.y += 1;
-
-        if (Input.GetKey(KeyCode.S))
-            direction.y -= 1;
-
-        if (Input.GetKey(KeyCode.A))
-            direction.x -= 1;
-
-        if (Input.GetKey(KeyCode.D))
-            direction.x += 1;
+        float horizontalMove = Input.GetAxisRaw("Horizontal");
+        float verticalMove = Input.GetAxisRaw("Vertical");
+        Vector3 direction = new Vector3(horizontalMove, verticalMove, 0);
 
         transform.Translate(direction * _speed * Time.deltaTime);
     }

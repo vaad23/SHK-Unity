@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -13,11 +11,11 @@ public class Player : MonoBehaviour
         _movement = GetComponent<PlayerMovement>();
     }
 
-    public void TakeEffect(EffectEnum effect, float time, float value)
+    public void TakeEffect(Effect.Type type, float time, float value)
     {
-        switch (effect)
+        switch (type)
         {
-            case EffectEnum.Speed:
+            case Effect.Type.Speed:
                 _movement.ChangeSpeed(time, value);
                 break;
         }

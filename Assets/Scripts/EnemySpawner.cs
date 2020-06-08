@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,11 +12,24 @@ public class EnemySpawner : MonoBehaviour
     private void Awake()
     {
         _livingEnemies = new List<Enemy>();
+    }
 
+    private void OnEnable()
+    {
+        foreach (var enemy in _livingEnemies)
+            enemy.DamageTaking += OnDamageTaking;
+    }
+
+    private void OnDisable()
+    {
+        foreach (var enemy in _livingEnemies)
+            enemy.DamageTaking -= OnDamageTaking;
+    }
+
+    private void Start()
+    {
         for (int i = 0; i < 4; i++)
-        {
             Spawn(transform, new Vector3(i, 0, 0));
-        }
     }
 
     private void Spawn(Transform parent, Vector3 position)
@@ -25,13 +37,13 @@ public class EnemySpawner : MonoBehaviour
         var spawnedEnemy = Instantiate(_template, parent);
         spawnedEnemy.transform.position = position;
         _livingEnemies.Add(spawnedEnemy);
-        spawnedEnemy.TakedDamageEvent += OnTakedDamage;
+        spawnedEnemy.DamageTaking += OnDamageTaking;
     }
 
-    private void OnTakedDamage(Enemy enemy)
+    private void OnDamageTaking(Enemy enemy)
     {
         _livingEnemies.Remove(enemy);
-        enemy.TakedDamageEvent -= OnTakedDamage;
+        enemy.DamageTaking -= OnDamageTaking;
         Destroy(enemy.gameObject);
 
         if (_livingEnemies.Count == 0)
